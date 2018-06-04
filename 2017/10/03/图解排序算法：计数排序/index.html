@@ -87,13 +87,15 @@
 <meta property="og:site_name" content="纯文笔记">
 <meta property="og:description" content="基本思想​       计数排序是一个非基于比较的排序算法，该算法于1954年由 Harold H. Seward 提出。它的优势在于在对一定范围内的整数排序时，它的复杂度为Ο(n+k)（其中k是整数的范围），快于任何比较排序算法。当然这是一种牺牲空间换取时间的做法。 ​       其基本思想是对于给定的输入序列中的每一个元素x，确定该序列中值小于x的元素的个数（此处并非比较各元素的大小，而是通">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/6osMhib2Gg4UH1ialBV2gQ0xnNRSibrcyMjJYkzsvseeXo4ZTuvibbibq3zg5olg8scAGMAEwp0ico2w4NyiaJBNAFksA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1">
 <meta property="og:image" content="http://yoursite.com/2017/10/03/图解排序算法：计数排序/图解排序算法：计数排序/count_sort_01.jpg">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/6osMhib2Gg4UH1ialBV2gQ0xnNRSibrcyMjzNKF2FYe1CWBlUcwicm8wJw1XWmEiaJ9VR8QR9g0thxjKib9HFv7RnJzA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1">
 <meta property="og:image" content="http://yoursite.com/2017/10/03/图解排序算法：计数排序/图解排序算法：计数排序/mediaplatform.jpg">
-<meta property="og:updated_time" content="2018-06-03T06:47:11.985Z">
+<meta property="og:updated_time" content="2018-06-04T05:51:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图解排序算法：计数排序">
 <meta name="twitter:description" content="基本思想​       计数排序是一个非基于比较的排序算法，该算法于1954年由 Harold H. Seward 提出。它的优势在于在对一定范围内的整数排序时，它的复杂度为Ο(n+k)（其中k是整数的范围），快于任何比较排序算法。当然这是一种牺牲空间换取时间的做法。 ​       其基本思想是对于给定的输入序列中的每一个元素x，确定该序列中值小于x的元素的个数（此处并非比较各元素的大小，而是通">
-<meta name="twitter:image" content="http://yoursite.com/2017/10/03/图解排序算法：计数排序/图解排序算法：计数排序/count_sort_01.jpg">
+<meta name="twitter:image" content="http://mmbiz.qpic.cn/mmbiz_png/6osMhib2Gg4UH1ialBV2gQ0xnNRSibrcyMjJYkzsvseeXo4ZTuvibbibq3zg5olg8scAGMAEwp0ico2w4NyiaJBNAFksA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1">
 
 
 
@@ -328,7 +330,9 @@
         <h3 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h3><p>​       计数排序是一个非基于比较的排序算法，该算法于1954年由 Harold H. Seward 提出。它的优势在于在对一定范围内的整数排序时，它的复杂度为Ο(n+k)（其中k是整数的范围），快于任何比较排序算法。当然这是一种牺牲空间换取时间的做法。</p>
 <p>​       其基本思想是对于给定的输入序列中的每一个元素x，确定该序列中值小于x的元素的个数（此处并非比较各元素的大小，而是通过对元素值的计数和计数值的累加来确定）。一旦有了这个信息，就可以将x直接存放到最终的输出序列的正确位置上。</p>
 <a id="more"></a>
-<h3 id="图解排序"><a href="#图解排序" class="headerlink" title="图解排序"></a>图解排序</h3><p><img src="图解排序算法：计数排序/count_sort_01.jpg" alt="img"></p>
+<h3 id="图解排序"><a href="#图解排序" class="headerlink" title="图解排序"></a>图解排序</h3><p><img src="http://mmbiz.qpic.cn/mmbiz_png/6osMhib2Gg4UH1ialBV2gQ0xnNRSibrcyMjJYkzsvseeXo4ZTuvibbibq3zg5olg8scAGMAEwp0ico2w4NyiaJBNAFksA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="img"></p>
+<p><img src="图解排序算法：计数排序/count_sort_01.jpg" alt="img"></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/6osMhib2Gg4UH1ialBV2gQ0xnNRSibrcyMjzNKF2FYe1CWBlUcwicm8wJw1XWmEiaJ9VR8QR9g0thxjKib9HFv7RnJzA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="img"></p>
 <h3 id="图解说明"><a href="#图解说明" class="headerlink" title="图解说明"></a>图解说明</h3><p>​       根据图解过程发现，我们采用计数排序需要知道一些前提条件。</p>
 <p>​       例如数组中的最大值与最小值。所以写代码时，显然这个是需要作为形参手动传入的。</p>
 <p>​       当然，也有人想，我何必用肉眼去观察呢，可以用其它排序手法写个程序找出其最大值最小值，再传入此处啊。认真思考一下，这样多没意思啊，其它排序手法直接就可以排好序啊，真这样做又何必多此一举再用计数排序呢。</p>
