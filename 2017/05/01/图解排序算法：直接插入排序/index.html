@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="排序算法,直接插入排序," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="直接插入排序直接插入排序指将一个记录插入到一个有序列表中的合适位置，并要求新列表依然是有序的。 算法思路以对一个给定长度为n的无序数组a[]从小到大排列为例。   假定数组的第二位a[1]至末位a[n-1]目前不是该数组的元素，而是待插入的值。 按照1中的假定，此时数组a[]只有1个元素，显然，只有1个元素的数组可以视为有序数组。 将a[1]值与数组a[]所含的1个元素比对，如a[1]较小则将另一">
+<meta name="keywords" content="排序算法,直接插入排序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图解排序算法：直接插入排序">
+<meta property="og:url" content="http://yoursite.com/2017/05/01/图解排序算法：直接插入排序/index.html">
+<meta property="og:site_name" content="纯文笔记">
+<meta property="og:description" content="直接插入排序直接插入排序指将一个记录插入到一个有序列表中的合适位置，并要求新列表依然是有序的。 算法思路以对一个给定长度为n的无序数组a[]从小到大排列为例。   假定数组的第二位a[1]至末位a[n-1]目前不是该数组的元素，而是待插入的值。 按照1中的假定，此时数组a[]只有1个元素，显然，只有1个元素的数组可以视为有序数组。 将a[1]值与数组a[]所含的1个元素比对，如a[1]较小则将另一">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2017/05/01/图解排序算法：直接插入排序/图解排序算法：直接插入排序/insert_sort_01.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/05/01/图解排序算法：直接插入排序/图解排序算法：直接插入排序/mediaplatform.jpg">
+<meta property="og:updated_time" content="2018-06-04T05:51:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="图解排序算法：直接插入排序">
+<meta name="twitter:description" content="直接插入排序直接插入排序指将一个记录插入到一个有序列表中的合适位置，并要求新列表依然是有序的。 算法思路以对一个给定长度为n的无序数组a[]从小到大排列为例。   假定数组的第二位a[1]至末位a[n-1]目前不是该数组的元素，而是待插入的值。 按照1中的假定，此时数组a[]只有1个元素，显然，只有1个元素的数组可以视为有序数组。 将a[1]值与数组a[]所含的1个元素比对，如a[1]较小则将另一">
+<meta name="twitter:image" content="http://yoursite.com/2017/05/01/图解排序算法：直接插入排序/图解排序算法：直接插入排序/insert_sort_01.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/01/图解排序算法：直接插入排序/"/>
+
+
+
+
+
+  <title>图解排序算法：直接插入排序 | 纯文笔记</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">纯文笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录知识，分享心得。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/01/图解排序算法：直接插入排序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐纯文">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="纯文笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">图解排序算法：直接插入排序</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-01T10:17:49+08:00">
+                2017-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构与算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><p>直接插入排序指将一个记录插入到一个有序列表中的合适位置，并要求新列表依然是有序的。</p>
+<h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h3><p>以对一个给定长度为n的无序数组a[]从小到大排列为例。</p>
+<blockquote>
+<ol>
+<li>假定数组的第二位a[1]至末位a[n-1]目前不是该数组的元素，而是待插入的值。</li>
+<li>按照1中的假定，此时数组a[]只有1个元素，显然，只有1个元素的数组可以视为有序数组。</li>
+<li>将a[1]值与数组a[]所含的1个元素比对，如a[1]较小则将另一个比对元素后移以便腾出位置，将a[1]的值插入最后腾出的位置。此时，数组a[]有2个元素且是有序的。</li>
+<li>将a[2]值与数组a[]所含的2个元素依次比对，如a[2]较小则将另一个比对元素后移以便腾出位置，直到a[2]不是较小值或已比到数组首位，则将a[2]的值插入最后腾出的位置上。此时，数组a[]有3个元素且是有序的。</li>
+<li>……</li>
+<li>将a[n-1]值与数组a[]所含的n-1个元素依次比对，如a[n-1]较小则将另一个比对元素后移以便腾出位置，直到a[n-1]不是较小值或已比到数组首位，则将a[n-1]的值插入最后腾出的位置上。此时，数组a[]全部排序完成，有n个元素且是有序的。</li>
+</ol>
+</blockquote>
+<a id="more"></a>
+<h3 id="图解算法"><a href="#图解算法" class="headerlink" title="图解算法"></a>图解算法</h3><p>依然以图解来说明排序算法的过程，更加直观易懂。</p>
+<p><img src="图解排序算法：直接插入排序/insert_sort_01.jpg" alt="img"></p>
+<h3 id="图解说明"><a href="#图解说明" class="headerlink" title="图解说明"></a>图解说明</h3><p>从图解初始我们可以看到，首先我们将长度为n的数组a[]视为只包含其首位元素，其余元素（a[1]~a[n-1]）皆视为待插入的记录。每次插入1个记录，显然，我们需要插入n-1次。</p>
+<p>若用 i 表示插入次序，显然其取值范围是 1 &lt;= i &lt;= n -1。（ｎ－１是末位下标，可以取值到，所以是＜＝号。）</p>
+<p>当然你也可以写成1 &lt;= i &lt; n。（ｎ是数组长度，下标取不到该埴，所以是＜号）</p>
+<p>于是，我们有了这样的代码来表示每次插入一个值，如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在图解中，每次插入值时，我们会先用temp保存要插入的值，以防止左侧值右移时覆盖掉该值，另一个作用是将该值插入到寻找到的合适插入位置（即最终腾出的位置）。完善一下上面的代码，则是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</span><br><span class="line">  <span class="keyword">int</span> temp = a[i];</span><br><span class="line">  <span class="comment">//这里是寻找合适插入位置、循环比对大小的逻辑代码</span></span><br><span class="line">  a[x] = temp;<span class="comment">//x为最终腾出的下标位</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的代码中，很明显空缺了一块非常重要的逻辑，就是如何寻找到合适的插入位置。</p>
+<p>接下来按照图解情况来分析一下。</p>
+<blockquote>
+<p>首先数组中有1个元素，即a[0]。</p>
+<p>当第1次插入元素时，插入在a[1]位，将其值存在temp中，并与其前一位a[0]比对。插入值更小，将a[0]复制给a[1]，腾出了a[0]位。因为已经比对到数组首位了，所以停止比对，然后将temp值插入以a[0]。（请注意，这里出现了第一种停止比对的条件）</p>
+<p>当第2次插入元素时，插入在a[2]位，将其值存在temp中，并与其前一位a[1]比对。插入值更小，将a[1]复制给a[2]，腾出了a[1]位；temp继续和前一位a[0]比对，插入值更小，将a[0]复制给a[1]（刚才的腾出位被占，但此时腾出了新的位置a[0]）。因为已经比对到数组首位了，所以停止比对，然后将temp值插入以a[0]。</p>
+<p>当第3次插入元素地，插入在a[3]位，将其值存在temp中，并与其前一位a[2]比对。插入值更大；因为前面的数组元素已经是从小到大排列了，所以插入值既然比a[2]大，那么也没有必要再和前面的元素比大小了。所以停止比对。因为没有腾出位置，所以将temp值插入末位a[3]。（请注意，这里出现了第二种停止比对的条件）</p>
+<p>…………</p>
+<p>当第 i 次插入元素时，插入在a[ i ]位，将其值存在temp中，并与其前一位a[ i-1 ]比对。如插入值更大，说明其比前面的所有值都更大（因为前面已经是从小到大排列了），停止比对，并将temp值插入到末位。如插入值更小，则将参与比对的元素值覆盖后一位，腾出当前位置。temp继续与前一位比对，如此重复，直到出现上文中任意一个停止比对条件，然后将temp值插入以最后的腾出位置。</p>
+</blockquote>
+<p>将上面的比对插入分析，会发现在每次插入新记录时，都是从插入位置的前一位开始比对，若用 j 表示与temp比对的元素的下标，则 j 的初始值为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">j = i - <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>若某次比对后，没有触发停止比对的条件，则其前一位继续与temp比较，也就是参与比对的元素下标会发生这样的变化：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">j = j-<span class="number">1</span>; <span class="comment">// j--</span></span><br></pre></td></tr></table></figure>
+<p>图解中出现了2种停止比对的条件，一是比完了首位a[0]，一是比对的值大于要插入值temp，即：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">j &gt;= <span class="number">0</span> &amp;&amp; a[ j ] &gt; temp;</span><br></pre></td></tr></table></figure>
+<p>当经过比对，插入值temp比参与比对的值小时，该比对的值向移一位，腾出当前位置，即：</p>
+<p>综合以上分析，我们可以写出算法的核心代码了。</p>
+<h3 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i, j, temp;</span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">1</span>; i &lt; a.length; i++)&#123;</span><br><span class="line">     temp = a[i];</span><br><span class="line">     <span class="keyword">for</span>(j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span> &amp;&amp; temp &lt; a[j]; j--)&#123;</span><br><span class="line">        a[j + <span class="number">1</span>] = a[j]; <span class="comment">// j 是每次腾出的位置   </span></span><br><span class="line">     &#125;</span><br><span class="line">     a[j + <span class="number">1</span>] = temp;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码已经完成了，或许有人还有一个疑问，为什么最后temp是赋值给a[ j+1]而不是a[ j ]呢？不是说 j 才是腾出的位置吗？</p>
+<p>请注意，最后一次执行内部for循环时，将 j 位置上的值移给后一位 j+1位置了， j 位就是最后腾出的位置。然后！然后 j 做了什么行为？ j - - 。所以for循环结束时，j 自身减1了，所以跳出for循环后，要 j+1 才是真正腾出的位置。</p>
+<p>在图解中也能比较好地说明这个细节，每次比对符合条件时，将当前值移给后一位之后，当前位就是腾出的位置。接着temp会继续与更前一位继续比对，所以此时，刚才腾出的位置就是当前位的右边一位了。</p>
+<h3 id="算法稳定性"><a href="#算法稳定性" class="headerlink" title="算法稳定性"></a>算法稳定性</h3><p>直接插入排序算法是稳定的算法。</p>
+<p>在图解示例中，我们发现2个8的前后相对位置在排序前和排序完成后并未发生改变。</p>
+<p>当然，如果你非要把代码改成下面这样，它确实可以变成不稳定的算法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span> &amp;&amp; temp &lt;= a[j]; j--)&#123;   <span class="comment">//把temp &lt; a[j] 改为 temp &lt;= a[j]  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="图解排序算法：直接插入排序/mediaplatform.jpg" alt="img"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/排序算法/" rel="tag"># 排序算法</a>
+          
+            <a href="/tags/直接插入排序/" rel="tag"># 直接插入排序</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/02/图解排序算法：选择排序/" rel="next" title="图解排序算法：选择排序">
+                <i class="fa fa-chevron-left"></i> 图解排序算法：选择排序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/03/图解排序算法：希尔排序/" rel="prev" title="图解排序算法：希尔排序">
+                图解排序算法：希尔排序 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">徐纯文</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接插入排序"><span class="nav-number">1.</span> <span class="nav-text">直接插入排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法思路"><span class="nav-number">2.</span> <span class="nav-text">算法思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图解算法"><span class="nav-number">3.</span> <span class="nav-text">图解算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图解说明"><span class="nav-number">4.</span> <span class="nav-text">图解说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心代码"><span class="nav-number">5.</span> <span class="nav-text">核心代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法稳定性"><span class="nav-number">6.</span> <span class="nav-text">算法稳定性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">徐纯文</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
