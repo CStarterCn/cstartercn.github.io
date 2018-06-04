@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="排序算法,冒泡排序," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -80,21 +80,20 @@
 
 
 <meta name="description" content="冒泡排序冒泡排序是一种计算机科学领域的较简单的排序算法。名字由来是因为越大的元素会经典交换慢慢“浮”到数列的顶端，故名。（指从大到小的排序） 算法原理对一个给定长度为n的随机无序数组a[]（以从小到大排序为例），从第1位开始，相邻的2个数字两两互相比大小，如果前者比后者大，则双方交换数值。然后值大者再与后一位比较……通过相邻的数字不断两两比较（后者大则双方交换数值），值大者的下标将一步一步向后移动">
-<meta name="keywords" content="排序算法,冒泡排序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图解排序算法：冒泡排序">
 <meta property="og:url" content="http://yoursite.com/2017/03/29/图解排序算法：冒泡排序/index.html">
 <meta property="og:site_name" content="纯文笔记">
 <meta property="og:description" content="冒泡排序冒泡排序是一种计算机科学领域的较简单的排序算法。名字由来是因为越大的元素会经典交换慢慢“浮”到数列的顶端，故名。（指从大到小的排序） 算法原理对一个给定长度为n的随机无序数组a[]（以从小到大排序为例），从第1位开始，相邻的2个数字两两互相比大小，如果前者比后者大，则双方交换数值。然后值大者再与后一位比较……通过相邻的数字不断两两比较（后者大则双方交换数值），值大者的下标将一步一步向后移动">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/图解排序算法：冒泡排序/bubble_sort_01.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/03/29/图解排序算法：冒泡排序/图解排序算法：冒泡排序/bubble_sort_01.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/03/29/图解排序算法：冒泡排序/图解排序算法：冒泡排序/bubble_sort_02.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/03/29/图解排序算法：冒泡排序/图解排序算法：冒泡排序/mediaplatform.jpg">
-<meta property="og:updated_time" content="2018-06-04T14:05:42.780Z">
+<meta property="og:updated_time" content="2018-06-04T14:16:24.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图解排序算法：冒泡排序">
 <meta name="twitter:description" content="冒泡排序冒泡排序是一种计算机科学领域的较简单的排序算法。名字由来是因为越大的元素会经典交换慢慢“浮”到数列的顶端，故名。（指从大到小的排序） 算法原理对一个给定长度为n的随机无序数组a[]（以从小到大排序为例），从第1位开始，相邻的2个数字两两互相比大小，如果前者比后者大，则双方交换数值。然后值大者再与后一位比较……通过相邻的数字不断两两比较（后者大则双方交换数值），值大者的下标将一步一步向后移动">
-<meta name="twitter:image" content="http://yoursite.com/图解排序算法：冒泡排序/bubble_sort_01.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2017/03/29/图解排序算法：冒泡排序/图解排序算法：冒泡排序/bubble_sort_01.jpg">
 
 
 
@@ -277,28 +276,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构与算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -330,7 +307,7 @@
 <h3 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h3><p>对一个给定长度为n的随机无序数组a[]（以从小到大排序为例），从第1位开始，相邻的2个数字两两互相比大小，如果前者比后者大，则双方交换数值。然后值大者再与后一位比较……通过相邻的数字不断两两比较（后者大则双方交换数值），值大者的下标将一步一步向后移动。</p>
 <a id="more"></a>
 <h3 id="图解算法"><a href="#图解算法" class="headerlink" title="图解算法"></a>图解算法</h3><p>算法原理虽然比较简单，但仅通过文字阅读比较空洞和模糊，接下来以图解一个简单数组冒泡排序的过程来进行说明，会形象一些。</p>
-<p><img src="/图解排序算法：冒泡排序/bubble_sort_01.jpg" alt="img"></p>
+<p><img src="图解排序算法：冒泡排序/bubble_sort_01.jpg" alt="img"></p>
 <h3 id="图解说明"><a href="#图解说明" class="headerlink" title="图解说明"></a>图解说明</h3><p>从图解过程可以看出，我们对长度为5的数组进行了4次循环，分别用来确定末位a[4]、倒数第二位a[3]、a[2]、正数第二位a[1]位的值（思考：为什么第一位a[0]的值不用通过再一次循环来确定？）。</p>
 <p>因此我们猜想对于长度为n的数组，需要n-1次循环来从末向前依次确定每次的最大值（即依次确定a[n-1]/a[n-2]/……/a[2]/a[1]的值）。</p>
 <p>用 int类型 i 来表示第几次循环的话，则 i 取值为1至n-1间，即 1 &lt;= i &lt;= n-1。不过，因为数组下标从0开始，并且后面要用到a[i]的形式来表示数组元素，因此为了保持一致，我们将 i 从0开始取值，所以 i 的取值变成了 0 &lt;= i &lt;= n-2。当然，为了和数组末位的下标n-1保持一致，一般写成 0 &lt;= i &lt; n-1，其实对于int类型来说，i &lt;=n-2 和 i &lt; n-1 意思是一样的。（程序是多人协作的，为了方便代码的维护，建议使用约定俗成的写法。）</p>
@@ -375,14 +352,6 @@
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/排序算法/" rel="tag"># 排序算法</a>
-          
-            <a href="/tags/冒泡排序/" rel="tag"># 冒泡排序</a>
-          
-        </div>
       
 
       
@@ -500,7 +469,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
