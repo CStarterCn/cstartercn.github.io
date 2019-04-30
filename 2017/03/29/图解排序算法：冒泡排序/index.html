@@ -87,14 +87,14 @@
 <meta property="og:site_name" content="纯文笔记">
 <meta property="og:description" content="冒泡排序冒泡排序是一种计算机科学领域的较简单的排序算法。名字由来是因为越大的元素会经典交换慢慢“浮”到数列的顶端，故名。（指从大到小的排序） 算法原理对一个给定长度为n的随机无序数组a[]（以从小到大排序为例），从第1位开始，相邻的2个数字两两互相比大小，如果前者比后者大，则双方交换数值。然后值大者再与后一位比较……通过相邻的数字不断两两比较（后者大则双方交换数值），值大者的下标将一步一步向后移动">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blog.xcwer.com/2017/03/29/图解排序算法：冒泡排序/图解排序算法：冒泡排序/bubble_sort_01.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2017/03/29/图解排序算法：冒泡排序/图解排序算法：冒泡排序/bubble_sort_02.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2017/03/29/图解排序算法：冒泡排序/图解排序算法：冒泡排序/mediaplatform.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/03/29/图解排序算法：冒泡排序/bubble_sort_01.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/03/29/图解排序算法：冒泡排序/bubble_sort_02.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/03/29/图解排序算法：冒泡排序/mediaplatform.jpg">
 <meta property="og:updated_time" content="2018-06-04T14:16:24.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图解排序算法：冒泡排序">
 <meta name="twitter:description" content="冒泡排序冒泡排序是一种计算机科学领域的较简单的排序算法。名字由来是因为越大的元素会经典交换慢慢“浮”到数列的顶端，故名。（指从大到小的排序） 算法原理对一个给定长度为n的随机无序数组a[]（以从小到大排序为例），从第1位开始，相邻的2个数字两两互相比大小，如果前者比后者大，则双方交换数值。然后值大者再与后一位比较……通过相邻的数字不断两两比较（后者大则双方交换数值），值大者的下标将一步一步向后移动">
-<meta name="twitter:image" content="http://blog.xcwer.com/2017/03/29/图解排序算法：冒泡排序/图解排序算法：冒泡排序/bubble_sort_01.jpg">
+<meta name="twitter:image" content="http://blog.xcwer.com/2017/03/29/图解排序算法：冒泡排序/bubble_sort_01.jpg">
 
 
 
@@ -308,7 +308,7 @@
 <h3 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h3><p>对一个给定长度为n的随机无序数组a[]（以从小到大排序为例），从第1位开始，相邻的2个数字两两互相比大小，如果前者比后者大，则双方交换数值。然后值大者再与后一位比较……通过相邻的数字不断两两比较（后者大则双方交换数值），值大者的下标将一步一步向后移动。</p>
 <a id="more"></a>
 <h3 id="图解算法"><a href="#图解算法" class="headerlink" title="图解算法"></a>图解算法</h3><p>算法原理虽然比较简单，但仅通过文字阅读比较空洞和模糊，接下来以图解一个简单数组冒泡排序的过程来进行说明，会形象一些。</p>
-<p><img src="图解排序算法：冒泡排序/bubble_sort_01.jpg" alt="img"></p>
+<p><img src="/2017/03/29/图解排序算法：冒泡排序/bubble_sort_01.jpg" alt="img"></p>
 <h3 id="图解说明"><a href="#图解说明" class="headerlink" title="图解说明"></a>图解说明</h3><p>从图解过程可以看出，我们对长度为5的数组进行了4次循环，分别用来确定末位a[4]、倒数第二位a[3]、a[2]、正数第二位a[1]位的值（思考：为什么第一位a[0]的值不用通过再一次循环来确定？）。</p>
 <p>因此我们猜想对于长度为n的数组，需要n-1次循环来从末向前依次确定每次的最大值（即依次确定a[n-1]/a[n-2]/……/a[2]/a[1]的值）。</p>
 <p>用 int类型 i 来表示第几次循环的话，则 i 取值为1至n-1间，即 1 &lt;= i &lt;= n-1。不过，因为数组下标从0开始，并且后面要用到a[i]的形式来表示数组元素，因此为了保持一致，我们将 i 从0开始取值，所以 i 的取值变成了 0 &lt;= i &lt;= n-2。当然，为了和数组末位的下标n-1保持一致，一般写成 0 &lt;= i &lt; n-1，其实对于int类型来说，i &lt;=n-2 和 i &lt; n-1 意思是一样的。（程序是多人协作的，为了方便代码的维护，建议使用约定俗成的写法。）</p>
@@ -334,11 +334,11 @@
 <h3 id="代码优化"><a href="#代码优化" class="headerlink" title="代码优化"></a>代码优化</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i, j, temp;</span><br><span class="line">  <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; a.length - <span class="number">1</span> &amp;&amp; flag; i++)&#123;</span><br><span class="line">     flag = <span class="keyword">false</span>;</span><br><span class="line">     <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; a.length - <span class="number">1</span> - i; j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[j] &gt; a[j+<span class="number">1</span>])&#123; </span><br><span class="line">           temp = a[j];</span><br><span class="line">           a[j] = a[j+<span class="number">1</span>];</span><br><span class="line">           a[j+<span class="number">1</span>] = temp;</span><br><span class="line">           flag = <span class="keyword">true</span>;  </span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="算法稳定性"><a href="#算法稳定性" class="headerlink" title="算法稳定性"></a>算法稳定性</h3><p>我们接触算法时，常常会说这种算法是稳定的，或者不稳定的。所谓算法稳定性，并非指算法在不同时候运行可能导致结果不稳定（如果真这样，那就是天大的Error了），而是指相同的数值在排序前及排序后，前后相对位置是否发生了改变。如果改变了，则说这种算法是不稳定的，反之，即是稳定的。</p>
 <p>依然以上文的图解为例，当两个9相遇时，双方并未作交换，它们在全部排序完成后的相对位置与排序前是一致的，即是稳定的。</p>
-<p><img src="图解排序算法：冒泡排序/bubble_sort_02.jpg" alt="img"></p>
+<p><img src="/2017/03/29/图解排序算法：冒泡排序/bubble_sort_02.jpg" alt="img"></p>
 <p>当然，如果你的代码写成下面这样，那么在双方相等时，也会交换值，前后顺序便会发生改变，也就变成了不稳定的算法。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a[j] &gt;= a[j+<span class="number">1</span>])&#123; <span class="comment">//把 &gt; 写成 &gt;=</span></span><br><span class="line">   <span class="keyword">int</span> temp = a[j];</span><br><span class="line">   a[j] = a[j+<span class="number">1</span>];</span><br><span class="line">   a[j+<span class="number">1</span>] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>一般说来，冒泡排序算法本身是稳定的算法，但稍微不注意，也可能写成了不稳定的【微笑脸】。</p>
-<p><img src="图解排序算法：冒泡排序/mediaplatform.jpg" alt="img"></p>
+<p><img src="/2017/03/29/图解排序算法：冒泡排序/mediaplatform.jpg" alt="img"></p>
 
       
     </div>

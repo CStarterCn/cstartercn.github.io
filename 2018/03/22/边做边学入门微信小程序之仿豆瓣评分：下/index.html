@@ -87,15 +87,15 @@
 <meta property="og:site_name" content="纯文笔记">
 <meta property="og:description" content="微信小程序由于适用性强、逻辑简要、开发迅速的特性，叠加具有海量活跃用户的腾讯公司背景，逐渐成为了轻量级单一功能应用场景的较佳承载方式，诸如电影购票、外卖点餐、移动商城、生活服务等场景服务提供商迅速切入了。 为了贴合实际的应用情况，本篇以豆瓣评分小程序为参考样例，边做边学小程序的入门开发知识。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blog.xcwer.com/2018/03/22/边做边学入门微信小程序之仿豆瓣评分：下/边做边学入门微信小程序之仿豆瓣评分：下/miniprogram_01.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2018/03/22/边做边学入门微信小程序之仿豆瓣评分：下/边做边学入门微信小程序之仿豆瓣评分：下/miniprogram_02.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2018/03/22/边做边学入门微信小程序之仿豆瓣评分：下/边做边学入门微信小程序之仿豆瓣评分：下/miniprogram_03.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2018/03/22/边做边学入门微信小程序之仿豆瓣评分：下/边做边学入门微信小程序之仿豆瓣评分：下/mediaplatform.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2018/03/22/边做边学入门微信小程序之仿豆瓣评分：下/miniprogram_01.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2018/03/22/边做边学入门微信小程序之仿豆瓣评分：下/miniprogram_02.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2018/03/22/边做边学入门微信小程序之仿豆瓣评分：下/miniprogram_03.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2018/03/22/边做边学入门微信小程序之仿豆瓣评分：下/mediaplatform.jpg">
 <meta property="og:updated_time" content="2018-06-04T05:51:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="边做边学入门微信小程序之仿豆瓣评分（下）">
 <meta name="twitter:description" content="微信小程序由于适用性强、逻辑简要、开发迅速的特性，叠加具有海量活跃用户的腾讯公司背景，逐渐成为了轻量级单一功能应用场景的较佳承载方式，诸如电影购票、外卖点餐、移动商城、生活服务等场景服务提供商迅速切入了。 为了贴合实际的应用情况，本篇以豆瓣评分小程序为参考样例，边做边学小程序的入门开发知识。">
-<meta name="twitter:image" content="http://blog.xcwer.com/2018/03/22/边做边学入门微信小程序之仿豆瓣评分：下/边做边学入门微信小程序之仿豆瓣评分：下/miniprogram_01.jpg">
+<meta name="twitter:image" content="http://blog.xcwer.com/2018/03/22/边做边学入门微信小程序之仿豆瓣评分：下/miniprogram_01.jpg">
 
 
 
@@ -352,10 +352,10 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">App(&#123;</span><br><span class="line">  <span class="comment">//全局数据</span></span><br><span class="line">  globalData:&#123;</span><br><span class="line">    <span class="comment">//基本网址</span></span><br><span class="line">    baseUrl:<span class="string">"http://t.yushu.im"</span> </span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>注意，app.js最外层为App({})，各个页面的js文件是Page({})。</p>
 <p>因豆瓣近期关闭了面向个人开发者的API接口功能，本篇目前采用一家第三方接口(t.yushu.im)提供的数据，其并未提供搜索功能的接口，因此暂时无法实现官方小程序中含有的搜索功能。</p>
-<p><img src="边做边学入门微信小程序之仿豆瓣评分：下/miniprogram_01.jpg" alt="img"></p>
+<p><img src="/2018/03/22/边做边学入门微信小程序之仿豆瓣评分：下/miniprogram_01.jpg" alt="img"></p>
 <p>Tips：第三方接口仅供学习使用，请勿滥用；并且可能随时停止服务，请勿用在正式产品中。</p>
 <p>因为小程序要求网络请求的域名必须为https安全链接，这里开发用的接口网址没有https证书，因此需要点击开发者工具顶端的菜单“设置”—“项目设置”，勾选“不校验安全域名”项。但是，正式发布的小程序所使用的网络请求中，接口网址必须为https类型。</p>
-<p><img src="边做边学入门微信小程序之仿豆瓣评分：下/miniprogram_02.jpg" alt="img"></p>
+<p><img src="/2018/03/22/边做边学入门微信小程序之仿豆瓣评分：下/miniprogram_02.jpg" alt="img"></p>
 <h5 id="逻辑实现"><a href="#逻辑实现" class="headerlink" title="逻辑实现"></a>逻辑实现</h5><p>在index.js文件开头写入：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// pages/movies/index/index.js</span></span><br><span class="line"><span class="comment">/* 导入网络请求工具类 */</span></span><br><span class="line"><span class="keyword">var</span> httpUtil = <span class="built_in">require</span>(<span class="string">'../../utils/httpUtil.js'</span>);</span><br><span class="line"><span class="comment">/* 导入字符处理工具类 */</span></span><br><span class="line"><span class="keyword">var</span> stringUtil = <span class="built_in">require</span>(<span class="string">'../../utils/stringUtil.js'</span>);</span><br><span class="line"><span class="comment">/* 获取App对象 */</span></span><br><span class="line"><span class="keyword">var</span> app = getApp();</span><br><span class="line">Page(&#123;</span><br><span class="line">  ……</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>在这里导入了网络请求和字符处理工具类，这样就可以调用工具类中module.exports向下暴露的方法。通过系统提供的getApp()方法获得APP实例app，之后可以用app调用APP的相关方法。</p>
@@ -413,8 +413,8 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">bindtap</span>=<span class="string">"outerTap"</span> <span class="attr">style</span>=<span class="string">"width:100px;height:100px;"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">catchtap</span>=<span class="string">"innerTap"</span> <span class="attr">style</span>=<span class="string">"width:50px;height:50px;"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>这里定义了两个嵌套的控件，内部使用了catchtap，外部则使用了bindtap。当我们只点击内部控件时，只会触发innerTap事件，外部控件的outerTap事件是不会触发的。而将catchtap改为bindtap后，外部控件的outerTap事件也能够触发。可见，bindtap不会阻止事件向外层（父层）传达，而catchtap则不同，会将事件捕获在本层，不再向外传达。</p>
 <h3 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h3><p>也许你注意到了，在控制台总是在有wx:for循环的地方会出现下图的提示，尝试去搜索下答案吧？</p>
-<p><img src="边做边学入门微信小程序之仿豆瓣评分：下/miniprogram_03.jpg" alt="img"></p>
-<p><img src="边做边学入门微信小程序之仿豆瓣评分：下/mediaplatform.jpg" alt="img"></p>
+<p><img src="/2018/03/22/边做边学入门微信小程序之仿豆瓣评分：下/miniprogram_03.jpg" alt="img"></p>
+<p><img src="/2018/03/22/边做边学入门微信小程序之仿豆瓣评分：下/mediaplatform.jpg" alt="img"></p>
 
       
     </div>

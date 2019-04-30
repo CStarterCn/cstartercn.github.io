@@ -87,13 +87,13 @@
 <meta property="og:site_name" content="纯文笔记">
 <meta property="og:description" content="希尔排序希尔排序(Shell Sort)是插入排序的一种。也称缩小增量排序，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因DL．Shell于1959年提出而得名。 希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。 算法特点以从小到大排列为例。 希尔排序算">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blog.xcwer.com/2017/06/03/图解排序算法：希尔排序/图解排序算法：希尔排序/shell_sort_01.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2017/06/03/图解排序算法：希尔排序/图解排序算法：希尔排序/mediaplatform.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/06/03/图解排序算法：希尔排序/shell_sort_01.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/06/03/图解排序算法：希尔排序/mediaplatform.jpg">
 <meta property="og:updated_time" content="2018-06-04T05:51:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图解排序算法：希尔排序">
 <meta name="twitter:description" content="希尔排序希尔排序(Shell Sort)是插入排序的一种。也称缩小增量排序，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因DL．Shell于1959年提出而得名。 希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。 算法特点以从小到大排列为例。 希尔排序算">
-<meta name="twitter:image" content="http://blog.xcwer.com/2017/06/03/图解排序算法：希尔排序/图解排序算法：希尔排序/shell_sort_01.jpg">
+<meta name="twitter:image" content="http://blog.xcwer.com/2017/06/03/图解排序算法：希尔排序/shell_sort_01.jpg">
 
 
 
@@ -333,7 +333,7 @@
 <a id="more"></a>
 <h3 id="图解算法"><a href="#图解算法" class="headerlink" title="图解算法"></a>图解算法</h3><p>假定有数组a[n]，长度n=15。如果是采用直接插入排序算法，那么直接把第2-15位依次与插入位前1、2、3……位对比插入到合适位置即可。如果对数组从小到大排列，而一个较小的数在末尾，则该数要与前面一一比对很多次才行。显然，这种效率太低。</p>
 <p>那么，希尔算法怎么做呢？以一个例子来说明。对图片中长度n=15的随机无序数组进行从小到大排序。</p>
-<p><img src="图解排序算法：希尔排序/shell_sort_01.jpg" alt="img"></p>
+<p><img src="/2017/06/03/图解排序算法：希尔排序/shell_sort_01.jpg" alt="img"></p>
 <h3 id="图解说明"><a href="#图解说明" class="headerlink" title="图解说明"></a>图解说明</h3><p>第一局中，步长间隔gap= n / f = 7（n=15为数组长度，f=2 为折叠基数，其含义在文末说明，此环节先略过不作说明），使源数组的元素分组成了7组，各组分别采用直接插入排序算法进行排序。参与构成各组的下标分别为：</p>
 <blockquote>
 <p>第1组：a[0], a[7], a[14];</p>
@@ -369,7 +369,7 @@
 <p>我们从希尔算法的特点出发来分析一下。</p>
 <p>当n个相同的元素出现在数据源中时，通过一定的步长对数据源分组。相同的元素并不能保证在同一个小组中，当它们出现在不同的小组中时，便会各自与其小组中的元素比对及移位，则它们在源数据中的前后相对位置，可能会发生变化。</p>
 <p>因此，希尔排序算法是不稳定的算法。</p>
-<p><img src="图解排序算法：希尔排序/mediaplatform.jpg" alt="img"></p>
+<p><img src="/2017/06/03/图解排序算法：希尔排序/mediaplatform.jpg" alt="img"></p>
 
       
     </div>

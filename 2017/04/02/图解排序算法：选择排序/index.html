@@ -87,16 +87,16 @@
 <meta property="og:site_name" content="纯文笔记">
 <meta property="og:description" content="选择排序选择排序是一种简单直观的排序算法。它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。 算法原理原理见含义：步骤以对给定长度为n的数组a[]从小到大排序为例。   从待排序元素第1位a[i]与待排序元素第2位a[i+1]开始比较，记录较小元素下标为index。(注意是待排序元素第一位第二位) 上一步骤的较小值a[inde">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blog.xcwer.com/2017/04/02/图解排序算法：选择排序/图解排序算法：选择排序/select_sort_01.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2017/04/02/图解排序算法：选择排序/图解排序算法：选择排序/select_sort_02.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2017/04/02/图解排序算法：选择排序/图解排序算法：选择排序/select_sort_03.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2017/04/02/图解排序算法：选择排序/图解排序算法：选择排序/select_sort_04.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2017/04/02/图解排序算法：选择排序/图解排序算法：选择排序/mediaplatform.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/04/02/图解排序算法：选择排序/select_sort_01.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/04/02/图解排序算法：选择排序/select_sort_02.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/04/02/图解排序算法：选择排序/select_sort_03.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/04/02/图解排序算法：选择排序/select_sort_04.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/04/02/图解排序算法：选择排序/mediaplatform.jpg">
 <meta property="og:updated_time" content="2018-06-04T05:51:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图解排序算法：选择排序">
 <meta name="twitter:description" content="选择排序选择排序是一种简单直观的排序算法。它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。 算法原理原理见含义：步骤以对给定长度为n的数组a[]从小到大排序为例。   从待排序元素第1位a[i]与待排序元素第2位a[i+1]开始比较，记录较小元素下标为index。(注意是待排序元素第一位第二位) 上一步骤的较小值a[inde">
-<meta name="twitter:image" content="http://blog.xcwer.com/2017/04/02/图解排序算法：选择排序/图解排序算法：选择排序/select_sort_01.jpg">
+<meta name="twitter:image" content="http://blog.xcwer.com/2017/04/02/图解排序算法：选择排序/select_sort_01.jpg">
 
 
 
@@ -342,7 +342,7 @@
 <p>以上为一循环的步骤，每循环一次可以确定该次待排序元素间中的最小值，并将其置于合适位置。</p>
 <a id="more"></a>
 <h3 id="图解算法"><a href="#图解算法" class="headerlink" title="图解算法"></a>图解算法</h3><p>文字描述乏力，依然以对一个具体数组进行排序为例进行图解比较直观。</p>
-<p><img src="图解排序算法：选择排序/select_sort_01.jpg" alt="img"></p>
+<p><img src="/2017/04/02/图解排序算法：选择排序/select_sort_01.jpg" alt="img"></p>
 <h3 id="图解说明"><a href="#图解说明" class="headerlink" title="图解说明"></a>图解说明</h3><p>我们注意到，长度为n=5的数组a[]，共排序了4次。我们以int类型 i 表示排序次序的话，则 i 的取值范围在 1&lt;= i &lt;= n - 1。因数组元素操作其实是操作其下标，而下标从0开始，因此为方便后续的比对及交换，我们将 i 的取值范围减1，即 0 &lt;= i &lt;= n - 2 （此式与前式中，i 的取值范围是一样的）。又因n-1其实是数组末位的下标，因此按照约定俗成的写法，我们将式子变为 0 &lt;= i &lt; n - 1 （此式与前2个，i 的取值范围依然是相同的）。因此，有了这样的代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>接下来，我们观察每次大循环内部是如何找出该次的最小值的。</p>
@@ -361,13 +361,13 @@
 <p>将以上逻辑综合后，我们的排序算法代码便出来了。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i, j, index, temp;</span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; a.length - <span class="number">1</span>; i++)&#123;</span><br><span class="line">     index = i;</span><br><span class="line">     <span class="keyword">for</span>(j = i + <span class="number">1</span>; j &lt; a.length; j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[index] &gt; a[j])&#123;</span><br><span class="line">           index = j;  <span class="comment">//将较小值的下标赋值给index</span></span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">if</span>(index != i)&#123;</span><br><span class="line">        temp = a[i];</span><br><span class="line">        a[i] = a[index];</span><br><span class="line">        a[index] = temp;</span><br><span class="line">     &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="算法稳定性"><a href="#算法稳定性" class="headerlink" title="算法稳定性"></a>算法稳定性</h3><p>在图解过程中，我们注意以2个8的前后相对顺序在一次循环中交换了，后面的循环中并未复原，因此选择排序算法是不稳定的算法。</p>
-<p><img src="图解排序算法：选择排序/select_sort_02.jpg" alt="img"></p>
+<p><img src="/2017/04/02/图解排序算法：选择排序/select_sort_02.jpg" alt="img"></p>
 <p>​    —————————————————————————-</p>
-<p><img src="图解排序算法：选择排序/select_sort_03.jpg" alt="img"></p>
+<p><img src="/2017/04/02/图解排序算法：选择排序/select_sort_03.jpg" alt="img"></p>
 <p>此时，或许有人要说了，我把这里的代码改一下，那么不就行了吗？</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a[index] &gt;= a[j])&#123; <span class="comment">//把原来的 &gt; 改为 &gt;=</span></span><br><span class="line">  index = j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样，最后一个循环时，2个8不又交换回来吗？</p>
-<p><img src="图解排序算法：选择排序/select_sort_04.jpg" alt="img"></p>
+<p><img src="/2017/04/02/图解排序算法：选择排序/select_sort_04.jpg" alt="img"></p>
 <p>听起来是一个不错的想法，也确实解决了这个问题呢。</p>
 <p>但是，别急，刚才只是一个凑巧罢了，不信，如果数组是这样呢？</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;8, 7, 8#, 6, 5, 8##&#125;</span><br></pre></td></tr></table></figure>
@@ -377,7 +377,7 @@
 <p>例如，这么一个数组：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;8, 7, 8#, 6, 5, 8##, 5#, 6#, 7#, 6##, 5##&#125;</span><br></pre></td></tr></table></figure>
 <p>哈哈，有兴趣的可以算一算结果是什么？</p>
-<p><img src="图解排序算法：选择排序/mediaplatform.jpg" alt="img"></p>
+<p><img src="/2017/04/02/图解排序算法：选择排序/mediaplatform.jpg" alt="img"></p>
 
       
     </div>

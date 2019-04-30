@@ -87,20 +87,20 @@
 <meta property="og:site_name" content="纯文笔记">
 <meta property="og:description" content="堆与树很多朋友看到堆排序时，很可能是从冒泡等各种排序算法一路看过来的，其对于堆这种数据结构并无概念。 因此我们先对堆及相关数据结构的概念做个基本介绍。 二叉堆是一种完全二叉树。 树又是怎样的数据结构？ 之前，我们接触的常用数据结构如链表、栈、队列等，都是线性结构的，也就是一个节点的左右最多只有一个节点，故而在某些场景中，它们的使用效率太低。而树则不同，它的每个节点可以有N个节点。 （注意：没有任何">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/图解排序算法：堆排序/heap_sort_01.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/图解排序算法：堆排序/heap_sort_02.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/图解排序算法：堆排序/heap_sort_03.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/图解排序算法：堆排序/heap_sort_04.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/图解排序算法：堆排序/heap_sort_05.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/图解排序算法：堆排序/heap_sort_06.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/图解排序算法：堆排序/heap_sort_07.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/图解排序算法：堆排序/heap_sort_08.jpg">
-<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/图解排序算法：堆排序/mediaplatform.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/heap_sort_01.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/heap_sort_02.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/heap_sort_03.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/heap_sort_04.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/heap_sort_05.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/heap_sort_06.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/heap_sort_07.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/heap_sort_08.jpg">
+<meta property="og:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/mediaplatform.jpg">
 <meta property="og:updated_time" content="2018-06-04T05:51:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图解排序算法：堆排序">
 <meta name="twitter:description" content="堆与树很多朋友看到堆排序时，很可能是从冒泡等各种排序算法一路看过来的，其对于堆这种数据结构并无概念。 因此我们先对堆及相关数据结构的概念做个基本介绍。 二叉堆是一种完全二叉树。 树又是怎样的数据结构？ 之前，我们接触的常用数据结构如链表、栈、队列等，都是线性结构的，也就是一个节点的左右最多只有一个节点，故而在某些场景中，它们的使用效率太低。而树则不同，它的每个节点可以有N个节点。 （注意：没有任何">
-<meta name="twitter:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/图解排序算法：堆排序/heap_sort_01.jpg">
+<meta name="twitter:image" content="http://blog.xcwer.com/2017/09/02/图解排序算法：堆排序/heap_sort_01.jpg">
 
 
 
@@ -340,7 +340,7 @@
 <p>（注意：没有任何一种数据结构能通用所有场景，在不同场景中各种数据结构有不同的优劣势）</p>
 <a id="more"></a>
 <h3 id="什么是树"><a href="#什么是树" class="headerlink" title="什么是树"></a>什么是树</h3><p>树是包含n个节点的有空合集，n&gt;0。先看一张树的例图。</p>
-<p><img src="图解排序算法：堆排序/heap_sort_01.jpg" alt="img"></p>
+<p><img src="/2017/09/02/图解排序算法：堆排序/heap_sort_01.jpg" alt="img"></p>
 <p>根据上图，我们来理一理树的一些概念：</p>
 <blockquote>
 <ol>
@@ -356,7 +356,7 @@
 </ol>
 </blockquote>
 <p>根据树的不同特征，有一些比较特殊的树，下面做个简单的介绍。</p>
-<p><img src="图解排序算法：堆排序/heap_sort_02.jpg" alt="img"></p>
+<p><img src="/2017/09/02/图解排序算法：堆排序/heap_sort_02.jpg" alt="img"></p>
 <h4 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h4><blockquote>
 <p>1：除了最后一层，其余层次的所有节点都有2个子节点。</p>
 <p>2：其叶节点全部在最后一层，上面层次不存在叶节点。</p>
@@ -368,12 +368,12 @@
 <p>开篇即说二叉堆是一种完全二叉树，所以请注意它的特性，下文会用到。</p>
 <p>上图中，右侧那个不是完全二叉树，因为最后一层的叶节点不是从左向右紧密相连，中间有空缺。</p>
 <p>可以发现，满二叉树满足完全二叉树的特征，因此它也算一种特殊的完全二叉树。</p>
-<p><img src="图解排序算法：堆排序/heap_sort_03.jpg" alt="img"></p>
+<p><img src="/2017/09/02/图解排序算法：堆排序/heap_sort_03.jpg" alt="img"></p>
 <h4 id="二叉搜索树-BST树"><a href="#二叉搜索树-BST树" class="headerlink" title="二叉搜索树/BST树"></a>二叉搜索树/BST树</h4><p>仅作了解，与堆排序无关。</p>
 <p>对任意一个父节点，其左支所有节点都比它的值小，其右支所有节点都比它的值大，这样特征的二叉树被称为二叉搜索树（BST树）。</p>
 <p>上图左侧为一个二叉搜索树，而右侧不是，因为10的右支中出现了比它小的节点，而按照定义，任意一个节点，其右支的所有节点都必须比它大。</p>
 <p>要在二叉搜索树中检索某个值，先从根节点开始比对，如该值小，说明该值不可能出现在右支，因此往左支继续比对；如该值大，则往右支节点比对下去……如此循环比对下去。</p>
-<p><img src="图解排序算法：堆排序/heap_sort_04.jpg" alt="img"></p>
+<p><img src="/2017/09/02/图解排序算法：堆排序/heap_sort_04.jpg" alt="img"></p>
 <h4 id="平衡二叉树-AVL树"><a href="#平衡二叉树-AVL树" class="headerlink" title="平衡二叉树/AVL树"></a>平衡二叉树/AVL树</h4><p>仅作了解，与堆排序无关。</p>
 <p>对于整个树及任意一个子树，其左支高度与右支高度相差不超过1，则称之为平衡二叉树（AVL树）。</p>
 <p>上图中，左侧为AVL树，而右侧不是。因为虽然对于子树20来说，其左支高度为1，右支高度为3（从子树根节点20算起），高度相差为2，不符合AVL树的定义。</p>
@@ -386,13 +386,13 @@
 <p><strong>综合来说，二叉堆有2个特性，将在堆排序中用到：其一，完全二叉树的结构特性；其二，最小堆/最大堆的父子节点值大小特性。</strong></p>
 <p>请记住二叉堆的特性，堆排序就是根据此特性演算的。</p>
 <p>用图来说明。</p>
-<p><img src="图解排序算法：堆排序/heap_sort_05.jpg" alt="img"></p>
+<p><img src="/2017/09/02/图解排序算法：堆排序/heap_sort_05.jpg" alt="img"></p>
 <p>左一为二叉堆；左二不是，因为它最后一层叶子节点之间有空缺，不符合完全二叉树的特征；左三也不是，因为它不符合堆的父子节点值大小特性；左四也不是，因为它不符合“除最后一层和上一层外，其余节点都必须有2个子节点”的特性。</p>
 <h3 id="堆-子节点的下标关系"><a href="#堆-子节点的下标关系" class="headerlink" title="堆/子节点的下标关系"></a>堆/子节点的下标关系</h3><p>假定堆的各节点数值组成一个数组，即根节点为a[0]，那么a[i]节点的2个子节点下标是什么呢？</p>
 <p>关系如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">j = <span class="number">2</span> * i + <span class="number">1</span></span><br></pre></td></tr></table></figure>
 <p>下文我们简要推导一下，了解这点知识的朋友可跳过此小节。</p>
-<p><img src="图解排序算法：堆排序/heap_sort_06.jpg" alt="img"></p>
+<p><img src="/2017/09/02/图解排序算法：堆排序/heap_sort_06.jpg" alt="img"></p>
 <blockquote>
 <p>第1层只有根节点，共1个节点，即 1=21-1；<br>第2层有2个节点，即 2=22-1；<br>第3层有4个节点，即 4=23-1；<br>……<br>根据堆的特性，我们可以推测出：<br>第n-1层，该层节点共有2(n-1)-1；<br>第n层，该层节点共有2n-1；</p>
 </blockquote>
@@ -409,7 +409,7 @@
 <p><strong>即：父节点 i 的左子节点下标为 2i+1，右子节点下标为 2i +2。</strong></p>
 <h3 id="图解堆的构建"><a href="#图解堆的构建" class="headerlink" title="图解堆的构建"></a>图解堆的构建</h3><p>讲了这么多说明，那么对于给定的一个序列，如何构建堆呢？构建后又如何排序呢？</p>
 <h4 id="构建堆"><a href="#构建堆" class="headerlink" title="构建堆"></a>构建堆</h4><p>依然以图解来说明其详细过程。假定对于给定的一个无序数组{6, 8, 9, 7, 2, 5, 1, 3}，我们要对其从大到小排序，那么，我们首先要对其构建最小堆，令其最小值浮到根节点。</p>
-<p><img src="图解排序算法：堆排序/heap_sort_07.jpg" alt="img"></p>
+<p><img src="/2017/09/02/图解排序算法：堆排序/heap_sort_07.jpg" alt="img"></p>
 <p>根据以上步骤，我们构建了一个堆，此时数组变成了{1, 2, 5, 3, 8, 6, 9, 7}。</p>
 <p>在图解中，我们多次提到了从最后一个非叶子节点开始往前调整。</p>
 <p>那么，在堆中，最后一个非叶子节点的下标或位置又是什么呢？是否有什么规律呢？</p>
@@ -436,13 +436,13 @@
 <p>（看图会发现，前任意n位元素，其实就是堆中的前n个节点。所以此处截取前任意n个的元素组成新数组，都是符合堆特性的。）</p>
 <p>数组为：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;1, 2, 5, 3&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="图解排序算法：堆排序/heap_sort_08.jpg" alt="img"></p>
+<p><img src="/2017/09/02/图解排序算法：堆排序/heap_sort_08.jpg" alt="img"></p>
 <p>从图解中可以看出，在一个已调整好的二叉堆中，排序的整体思路是将首尾的值进行了交换，将最小值取出放入数组末位，此时根节点的值可能不符合最小堆的特性，因此需要将其和子节点中的小值对比往下沉，直到沉到合适位置……此时二叉堆又调整好了，开始新一轮的取出……</p>
 <p>我们依然尝试用代码来表达……</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sortHeap</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> temp;</span><br><span class="line">  <span class="comment">//从数组末位下标开始，每循环一次，长度-1，直到只剩1个节点</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=a.length-<span class="number">1</span>; i&gt;<span class="number">0</span>;i--)&#123;</span><br><span class="line">     <span class="comment">//交换首尾值</span></span><br><span class="line">     temp = a[<span class="number">0</span>];</span><br><span class="line">     a[<span class="number">0</span>] = a[i];</span><br><span class="line">     a[i] = temp;</span><br><span class="line">     <span class="comment">//每次从根节点开始调堆，长度为i（因为每排好1个就无视1个节点）</span></span><br><span class="line">     heapAdjust(a, <span class="number">0</span>, i);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h3><p>我们整理一下上文的代码，堆排序算法如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;</span><br><span class="line">   buildHeap(a);<span class="comment">//构建二叉堆</span></span><br><span class="line">   sortHeap(a);<span class="comment">//堆排序</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">buildHeap</span><span class="params">(<span class="keyword">int</span>[] a)</span> </span>&#123;</span><br><span class="line">   <span class="comment">// 从最后一个非叶子节点开始</span></span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = (a.length -<span class="number">2</span>)/ <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">       heapAdjust(a, i, a.length);<span class="comment">//每次的非叶子节点自减1</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sortHeap</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> temp;</span><br><span class="line">  <span class="comment">//从数组末位下标开始，每循环一次，长度-1，直到只剩1个节点</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=a.length-<span class="number">1</span>; i&gt;<span class="number">0</span>;i--)&#123;</span><br><span class="line">     <span class="comment">//交换首尾值</span></span><br><span class="line">     temp = a[<span class="number">0</span>];</span><br><span class="line">     a[<span class="number">0</span>] = a[i];</span><br><span class="line">     a[i] = temp;</span><br><span class="line">     <span class="comment">//每次从根节点开始调堆，长度为i（因为每排好1个就无视1个节点）</span></span><br><span class="line">     heapAdjust(a, <span class="number">0</span>, i);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//调整堆</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">heapAdjust</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> parent, <span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">int</span> temp = a[parent]; <span class="comment">//temp保存当前非叶子/父节点的值</span></span><br><span class="line">   <span class="keyword">int</span> child = <span class="number">2</span> * parent + <span class="number">1</span>; <span class="comment">//左节点下标 j=2i+1</span></span><br><span class="line">   <span class="keyword">while</span> (child &lt; length) &#123;</span><br><span class="line">       <span class="comment">// 左右节点对比，标记值小者</span></span><br><span class="line">       <span class="keyword">if</span> (child + <span class="number">1</span> &lt; length &amp;&amp; a[child] &gt; a[child + <span class="number">1</span>]) &#123;</span><br><span class="line">           child++;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">// 如果父结点的值已经小于等于孩子结点的值，无法下沉，说明已到合适位置</span></span><br><span class="line">       <span class="keyword">if</span> (temp &lt;= a[child])&#123;</span><br><span class="line">           <span class="keyword">break</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">// 否则，把子节点值放在父节点，将子节点当成父节点继续向下沉</span></span><br><span class="line">       a[parent] = a[child];</span><br><span class="line">       parent = child;</span><br><span class="line">       child = <span class="number">2</span> * child + <span class="number">1</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">//将初始的非叶子节点值赋值给当前的节点</span></span><br><span class="line">   a[parent] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="图解排序算法：堆排序/mediaplatform.jpg" alt="img"></p>
+<p><img src="/2017/09/02/图解排序算法：堆排序/mediaplatform.jpg" alt="img"></p>
 
       
     </div>
